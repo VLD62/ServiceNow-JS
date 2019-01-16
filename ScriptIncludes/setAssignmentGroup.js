@@ -1,3 +1,4 @@
+//Works in pair with populate assignment group scripts
 var setAssignmentGroup = Class.create();
 setAssignmentGroup.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 	populateAssignmentGroupCI : function (){
@@ -17,8 +18,8 @@ setAssignmentGroup.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 		}
 	},
 		populateAssignmentGroupBS : function (){
-		var gr2 = new GlideRecord('cmdb_ci_service');
-		gr.addQuery ('sys_id',this.getParameter('sysparm_cmdb_ci_service'));
+		var gr = new GlideRecord('cmdb_ci_service');
+		gr.addQuery ('sys_id',this.getParameter('sysparm_business_service'));
 		gr.query();
 		if (gr.next()) {
 			return gr.support_group;

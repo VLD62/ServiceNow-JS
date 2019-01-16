@@ -1,7 +1,9 @@
+//General Old Version
+
 function onChange(control, oldValue, newValue, isLoading, isTemplate) {
 	function getResponse(response){
-		var answer = response.responseXML.documentElement.getAttribute("answer");
-		console.log("********** VARIABLE TRACE " + answer + " VARIABLE TRACE **********");
+		var answer = response.responseXML.documentElement.getAttribute("answer");TRACE
+		console.log("********** VARIABLE  " + answer + " VARIABLE TRACE **********");
 		g_form.setValue('assignment_group',answer);
 	}
 	if (isLoading || newValue === '') {

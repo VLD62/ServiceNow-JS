@@ -1,5 +1,5 @@
-var setAssignmentGroupCI = Class.create();
-setAssignmentGroupCI.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+var setAssignmentGroupBS = Class.create();
+setAssignmentGroupBS.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 	populateAssignmentGroup : function (){
 		var gr = new GlideRecord('cmdb_ci');
 		gr.addQuery ('sys_id',this.getParameter('sysparm_cmdb_ci'));
@@ -8,5 +8,5 @@ setAssignmentGroupCI.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 			return gr.support_group;
 		}
 	},
-	type: 'setAssignmentGroupCI'
+	type: 'setAssignmentGroupBS'
 });
