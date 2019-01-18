@@ -3,15 +3,11 @@ var ServiceSubscriptionRBB = Class.create();
 ServiceSubscriptionRBB.prototype = {
   initialize : function() {
   },
-	testf: function (){
-		return "name=Bond Trading London";
-	},
   getMySubscriptions : function(caller) {
     var answer = new Object();
-
-    this._addUser(answer);
-    this._addGroup(answer);
-    var u = GlideUser.getUserByID(gs.getUserID());
+    var u = GlideUser.getUserByID(caller);
+    this._addUser(answer,caller);
+    this._addGroup(answer,caller);
     this._addDept(answer, u.getDepartmentID());
     this._addLocation(answer, u.getLocation());
     this._addCompany(answer, u.getCompanyID());
@@ -23,14 +19,14 @@ ServiceSubscriptionRBB.prototype = {
     return a;
   },
 
-  _addUser : function(answer) {
+  _addUser : function(answer,u_id) {
     var gr = new GlideRecord('service_subscribe_sys_user');
-    gr.addQuery('sys_user', gs.getUserID());
+    gr.addQuery('sys_user', u_id);
     this._query(gr, answer);
   },
 
-  _addGroup : function(answer) {
-    var groups = GlideUser.getMyGroups(gs.getUserID());
+  _addGroup : function(answer,u_id) {
+    var groups = GlideUser.getMyGroups(u_id);
     if (groups.isEmpty())
        return;
 
