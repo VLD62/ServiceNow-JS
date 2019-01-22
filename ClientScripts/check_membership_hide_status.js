@@ -12,7 +12,7 @@ function onChange(control, oldValue, newValue, isLoading, isTemplate) {
     function printResult(response) {
         var answer = response.responseXML.documentElement.getAttribute("answer");
         //console.log("********** VARIABLE TRACE" + answer + " VARIABLE TRACE**********");
-        if(answer == 'false') {
+        if(answer == 'false' && stateValue==6) {
             g_form.removeOption('state', '2');
         } else {
             g_form.addOption('state', '2', 'In Progress', 2);
