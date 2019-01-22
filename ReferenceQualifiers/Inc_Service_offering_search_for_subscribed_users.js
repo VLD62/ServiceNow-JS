@@ -1,0 +1,1 @@
+javascript:"sys_idIN" +new ServiceSubscriptionRBB().getMySubscriptions();
