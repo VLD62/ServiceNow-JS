@@ -1,22 +1,7 @@
 
 
-function processData(myArray) {
-    function sortNumber(a,b) {
-       return b - a;
-    }
-    myArray.sort(sortNumber);
-   
-   console.log(myArray[1]);
-}
+var my_function = array => array.map(val => val + (val+1)%2 - val%2);
 
-// tail starts here
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-_input = "";
-process.stdin.on("data", function (input) {
-   _input += input;
-});
+console.log(my_function([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-process.stdin.on("end", function () {
-  processData(_input.split('\n')[1].split(' ').map(Number));
-});
+//[ 1, 0, 3, 2, 5, 4, 7, 6, 9, 8 ]
