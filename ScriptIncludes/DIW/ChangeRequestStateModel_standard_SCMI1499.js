@@ -91,7 +91,7 @@ ChangeRequestStateModel_standard.prototype = Object.extendsObject(ChangeRequestS
 			moving: function() {
 				return true;
 			},
-			
+			e
 			canMove: function() {
 				return true;
 			}
